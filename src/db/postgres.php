@@ -2,7 +2,7 @@
 
   require("./config/db.php");
 
-  define("PG_CONNECTION_STRING", "pgsql:host=$DB_HOST;port=$DB_PORT;dbname=$DB_NAME;user=$DB_USER;password=$DB_USER");
+  define("PG_CONNECTION_STRING", "pgsql:host=$DB_HOST;port=$DB_PORT;dbname=$DB_NAME;user=$DB_USER;password=$DB_PASSWORD");
 
   class PGConnection {
 
