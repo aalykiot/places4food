@@ -15,6 +15,7 @@ CREATE TABLE restaurants(
   photo TEXT,
   location VARCHAR(40),
   map_cords VARCHAR(50),
+  sponsored BOOLEAN DEFAULT(false),
   PRIMARY KEY (id)
 );
 
@@ -22,10 +23,12 @@ CREATE TABLE reviews(
   id SERIAL NOT NULL,
   user_id INTEGER NOT NULL,
   restaurant_id INTEGER NOT NULL,
+  description TEXT NOT NULL,
   taste_score REAL NOT NULL,
   service_score REAL NOT NULL,
   place_score REAL NOT NULL,
   vom_score REAL NOT NULL,
+  created_at TIMESTAMP NOT NULL,
   PRIMARY KEY (id),
   FOREIGN KEY (user_id) REFERENCES users (id),
   FOREIGN KEY (restaurant_id) REFERENCES restaurants (id)

@@ -6,16 +6,75 @@
 
     private $conn;
 
-    public $random_restaurants;
+    public $sponsored_restaurants;
     public $best_restaurants;
+    public $latest_reviews;
+    public $user_id;
 
     public function __construct() {
 
       $this->conn = new PGConnection();
 
-      $this->random_restaurants = $this->conn->query("SELECT * FROM restaurants ORDER BY random() LIMIT 4;");
+      $sql = "
+        SELECT restaurants.id,
+        restaurants.name,
+        restaurants.photo,
+        restaurants.type,
+        COUNT(*) as review_count,
+        (AVG(taste_score) + AVG(service_score) + AVG(place_score) + AVG(vom_Score))/4 as total_score
+        FROM restaurants
+        LEFT JOIN reviews
+        ON restaurants.id = reviews.restaurant_id
+        WHERE sponsored = true
+        GROUP BY restaurants.id
+        ORDER BY random()
+        LIMIT 4;
+      ";
+
+      $this->sponsored_restaurants = $this->conn->query($sql);
+
+      $sql = "
+        SELECT restaurants.id,
+        restaurants.name,
+        restaurants.photo,
+        restaurants.type,
+        COUNT(*) as review_count,
+        (AVG(taste_score) + AVG(service_score) + AVG(place_score) + AVG(vom_Score))/4 as total_score
+        FROM restaurants
+        LEFT JOIN reviews
+        ON restaurants.id = reviews.restaurant_id
+        GROUP BY restaurants.id
+        ORDER BY total_score
+        LIMIT 8;
+      ";
+
+      $this->best_restaurants = $this->conn->query($sql);
+
+      $sql = "
+        SELECT
+        reviews.id as rrv_id,
+        users.id as u_id,
+        users.photo as u_photo,
+        restaurants.id as r_id,
+        restaurants.name as r_name,
+        reviews.description as description
+        FROM reviews
+        JOIN users ON users.id = user_id
+        JOIN restaurants ON restaurants.id = restaurant_id
+        ORDER BY created_at
+        LIMIT 9;
+      ";
+
+      $this->latest_reviews = $this->conn->query($sql);
 
       $this->conn->close();
+
+    }
+
+    public function is_logged_in() {
+
+      if (isset($_SESSION['u_id'])) return true;
+      return false;
 
     }
 

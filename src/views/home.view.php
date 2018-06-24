@@ -11,9 +11,14 @@
     }
 
     public function render() {
-      $random_restaurants = $this->model->random_restaurants;
+
+      $sponsored_restaurants = $this->model->sponsored_restaurants;
+      $best_restaurants = $this->model->best_restaurants;
+      $latest_reviews = $this->model->latest_reviews;
+      $is_logged_in = $this->model->is_logged_in();
 
       require_once('./src/templates/home.template.php');
+
     }
 
   }
