@@ -40,6 +40,22 @@
 
     }
 
+    public function execute($sql, $params) {
+
+      try {
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute($params);
+
+        return $this->conn->lastInsertId();
+
+      } catch(PDOException $e) {
+        die($e->getMessage());
+      }
+
+    }
+
     public function close() {
 
       $this->conn = null;
