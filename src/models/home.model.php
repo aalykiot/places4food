@@ -1,6 +1,9 @@
 <?php
 
-  session_start();
+  if(!isset($_SESSION)) 
+  {
+      session_start();
+  }
 
   require('./src/db/postgres.php');
 
