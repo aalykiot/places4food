@@ -33,12 +33,3 @@ CREATE TABLE reviews(
   FOREIGN KEY (user_id) REFERENCES users (id),
   FOREIGN KEY (restaurant_id) REFERENCES restaurants (id)
 );
-
-CREATE TABLE review_likes(
-  id SERIAL NOT NULL,
-  review_id INTEGER NOT NULL,
-  user_id INTEGER NOT NULL,
-  PRIMARY KEY (id),
-  FOREIGN KEY (review_id) REFERENCES reviews (id),
-  FOREIGN key (user_id) REFERENCES users (id)
-);

@@ -141,7 +141,7 @@
             </div>
             <div class="media-object-section">
               <h6>Για το <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'] ?>"><b><?php echo $latest_reviews[$i]['r_name'] ?></b></a></h6>
-              <p> <?php echo substr($latest_reviews[$i]['description'], 0, 100).'...' ?> <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'] ?>">Συνέχεια</a></p>
+              <p> <?php echo substr($latest_reviews[$i]['description'], 0, 100).'...' ?> <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'].'#review-'.$latest_reviews[$i]['rrv_id'] ?>">Συνέχεια</a></p>
             </div>
           </div>
 
@@ -161,7 +161,7 @@
             </div>
             <div class="media-object-section">
               <h6>Για το <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'] ?>"><b><?php echo $latest_reviews[$i]['r_name'] ?></b></a></h6>
-              <p> <?php echo substr($latest_reviews[$i]['description'], 0, 100).'...' ?> <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'] ?>">Συνέχεια</a></p>
+              <p> <?php echo substr($latest_reviews[$i]['description'], 0, 100).'...' ?> <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'].'#review-'.$latest_reviews[$i]['rrv_id'] ?>">Συνέχεια</a></p>
             </div>
           </div>
 
@@ -181,7 +181,7 @@
             </div>
             <div class="media-object-section">
               <h6>Για το <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'] ?>"><b><?php echo $latest_reviews[$i]['r_name'] ?></b></a></h6>
-              <p> <?php echo substr($latest_reviews[$i]['description'], 0, 100).'...' ?> <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'] ?>">Συνέχεια</a></p>
+              <p> <?php echo substr($latest_reviews[$i]['description'], 0, 100).'...' ?> <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'].'#review-'.$latest_reviews[$i]['rrv_id'] ?>">Συνέχεια</a></p>
             </div>
           </div>
 

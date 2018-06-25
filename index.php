@@ -7,8 +7,9 @@
     $routes = array(
 
       'home' => array('path' => 'home', 'view' => 'HomeView', 'model' => 'HomeModel', 'controller' => 'HomeController'),
-      'user' => array('path' => 'user', 'view' => 'UserView', 'model' => 'UserModel', 'controller' => 'UserController')
-
+      'user' => array('path' => 'user', 'view' => 'UserView', 'model' => 'UserModel', 'controller' => 'UserController'),
+      'restaurant' => array('path' => 'restaurant', 'view' => 'RestaurantView', 'model' => 'RestaurantModel', 'controller' => 'RestaurantController')
+      
     );
 
     foreach ($routes as $route => $value) {

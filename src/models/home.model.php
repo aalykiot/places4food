@@ -63,7 +63,7 @@
         FROM reviews
         JOIN users ON users.id = user_id
         JOIN restaurants ON restaurants.id = restaurant_id
-        ORDER BY created_at
+        ORDER BY created_at DESC
         LIMIT 9;
       ";
 
