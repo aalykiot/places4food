@@ -13,6 +13,7 @@
     public function render() {
 
       $restaurant_info = $this->model->restarant_info[0];
+      $restaurants = $this->model->restaurants;
       $reviews = $this->model->reviews;
       $is_logged_in = $this->model->is_logged_in();
 

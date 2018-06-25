@@ -14,7 +14,6 @@ CREATE TABLE restaurants(
   type VARCHAR(50),
   photo TEXT,
   location VARCHAR(40),
-  map_cords VARCHAR(50),
   sponsored BOOLEAN DEFAULT(false),
   PRIMARY KEY (id)
 );

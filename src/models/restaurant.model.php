@@ -10,6 +10,7 @@
 
     public $id;
     public $restarant_info;
+    public $restaurants;
     public $reviews;
     public $template;
 
@@ -53,8 +54,28 @@
         $this->conn = null;
 
       } else {
-        header('Location: ./index.php?page=home');
-        return;
+
+
+        $sql = "
+          SELECT restaurants.id,
+          restaurants.name,
+          restaurants.photo,
+          restaurants.type,
+          COUNT(*) as review_count,
+          (AVG(taste_score) + AVG(service_score) + AVG(place_score) + AVG(vom_Score))/4 as total_score
+          FROM restaurants
+          LEFT JOIN reviews
+          ON restaurants.id = reviews.restaurant_id
+          GROUP BY restaurants.id
+          ORDER BY total_score
+        ";
+
+        $this->restaurants = $this->conn->query($sql);
+
+        $this->template = 'restaurant.all';
+
+        $this->conn = null;
+        
       }
 
     }

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foundation | Welcome</title>
+  <title>Foundation | <?php echo $restaurant_info['name'] ?></title>
   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
   <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
 
@@ -25,9 +25,8 @@
     <div class="top-bar-left">
       <ul class="menu vertical medium-horizontal">
         <li class="menu-text hide-for-small-only">Places4Food</li>
-        <li><a href="#">Κριτικές</a></li>
-        <li><a href="#">Εστιατόρια</a></li>
-        <li><a href="#">Χρήστες</a></li>
+        <li><a href="./index.php?page=restaurant">Εστιατόρια</a></li>
+        <li><a href="./index.php?page=reviews">Κριτικές</a></li>
       </ul>
     </div>
     <div class="top-bar-right">
@@ -49,7 +48,7 @@
     <nav aria-label="You are here:" role="navigation">
       <ul class="breadcrumbs">
         <li><a href="./index.php">Αρχικη</a></li>
-        <li><a href="#">Εστιατορια</a></li>
+        <li><a href="./index.php?page=restaurant">Εστιατορια</a></li>
         <li>
           <span class="show-for-sr">Current: </span> <?php echo $restaurant_info['name'] ?>
         </li>

@@ -27,9 +27,8 @@
     <div class="top-bar-left">
       <ul class="menu vertical medium-horizontal">
         <li class="menu-text hide-for-small-only">Places4Food</li>
-        <li><a href="#">Κριτικές</a></li>
-        <li><a href="#">Εστιατόρια</a></li>
-        <li><a href="#">Χρήστες</a></li>
+        <li><a href="./index.php?page=restaurant">Εστιατόρια</a></li>
+        <li><a href="./index.php?page=reviews">Κριτικές</a></li>
       </ul>
     </div>
     <div class="top-bar-right">
