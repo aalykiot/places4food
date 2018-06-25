@@ -61,7 +61,7 @@
         </div>
         <input class="button expanded" type="submit" name="register_submit" value="Εγγραφή">
 
-        <? if (isset($error)) { ?>
+        <?php if (isset($error)) { ?>
 
           <div style="color: #c0392b;">
             <b><?php echo $error ?> </b>

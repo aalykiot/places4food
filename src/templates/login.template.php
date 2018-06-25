@@ -56,7 +56,7 @@
           <input type="password" id="pass" name="password" placeholder="Κωδικός">
         </div>
         <input class="button expanded" type="submit" name="login_submit" value="Σύνδεση">
-        <? if (isset($error)) { ?>
+        <?php if (isset($error)) { ?>
 
           <div style="color: #c0392b;">
             <b><?php echo $error ?> </b>
