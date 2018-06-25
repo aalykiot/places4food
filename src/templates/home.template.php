@@ -81,7 +81,7 @@
         <h6> <?php echo number_format($restaurant['total_score'], 1) ?> / 4  <img src="../assets/icons/star.png" style="position: relative; top: -2px;" width="20" height="20"/> από <?php echo $restaurant['review_count'] ?> κριτικές</h6>
         <?php } else { ?>
 
-          <h6>  0 / 4  <img src="../assets/icons/star.png" style="position: relative; top: -2px;" width="20" height="20"> No reviews yet</h6>
+          <h6>  0 / 4  <img src="./assets/icons/star.png" style="position: relative; top: -2px;" width="20" height="20"> No reviews yet</h6>
         <?php } ?>
 
         <a href="./index.php?page=restaurant&id=<?php echo $restaurant['id'] ?>" class="button expanded">Περισσότερα</a>
@@ -113,7 +113,7 @@
         <h6> <?php echo number_format($restaurant['total_score'], 1) ?> / 4  <img src="../assets/icons/star.png" style="position: relative; top: -2px;" width="20" height="20"/> από <?php echo $restaurant['review_count'] ?> κριτικές</h6>
         <?php } else { ?>
 
-          <h6>  0 / 4  <img src="../assets/icons/star.png" style="position: relative; top: -2px;" width="20" height="20"> No reviews yet</h6>
+          <h6>  0 / 4  <img src="./assets/icons/star.png" style="position: relative; top: -2px;" width="20" height="20"> No reviews yet</h6>
         <?php } ?>
 
         <a href="./index.php?page=restaurant&id=<?php echo $restaurant['id'] ?>" class="button small expanded hollow">Περισσότερα</a>
