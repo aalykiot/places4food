@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+
   require('./src/db/postgres.php');
 
   class HomeModel {

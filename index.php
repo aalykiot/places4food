@@ -6,7 +6,8 @@
 
     $routes = array(
 
-      'home' => array('path' => 'home', 'view' => 'HomeView', 'model' => 'HomeModel', 'controller' => 'HomeController')
+      'home' => array('path' => 'home', 'view' => 'HomeView', 'model' => 'HomeModel', 'controller' => 'HomeController'),
+      'user' => array('path' => 'user', 'view' => 'UserView', 'model' => 'UserModel', 'controller' => 'UserController')
 
     );
 

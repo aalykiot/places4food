@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Places4Food | Home</title>
+  <title>Places4Food | Αρχική</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
@@ -35,11 +35,11 @@
     <div class="top-bar-right">
       <ul class="menu vertical medium-horizontal">
         <?php if ($is_logged_in) { ?>
-          <li><a href="./index.php?page=self">Λογαρισμός</a></li>
-          <li><a href="./index.php?page=self?action=logout">Αποσύνδεση</a></li>
+          <li><a href="./index.php?page=user">Λογαρισμός</a></li>
+          <li><a href="./index.php?page=user&action=logout">Αποσύνδεση</a></li>
         <?php } else { ?>
           <li><a href="./index.php?page=user&action=login">Σύνδεση</a></li>
-          <li><a href="./index.php?page=self&action=register">Εγγραφή</a></li>
+          <li><a href="./index.php?page=user&action=register">Εγγραφή</a></li>
         <?php } ?>
       </ul>
     </div>
