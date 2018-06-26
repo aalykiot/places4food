@@ -34,7 +34,7 @@
     <div class="top-bar-right">
       <ul class="menu vertical medium-horizontal">
         <?php if ($is_logged_in) { ?>
-          <li><a href="./index.php?page=user">Λογαρισμός</a></li>
+          <li><a href="./index.php?page=user">Λογαριασμός</a></li>
           <li><a href="./index.php?page=user&action=logout">Αποσύνδεση</a></li>
         <?php } else { ?>
           <li><a href="./index.php?page=user&action=login">Σύνδεση</a></li>

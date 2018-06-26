@@ -34,7 +34,7 @@
     <div class="top-bar-right">
       <ul class="menu vertical medium-horizontal">
         <?php if ($is_logged_in) { ?>
-          <li><a href="./index.php?page=user">Λογαρισμός</a></li>
+          <li><a href="./index.php?page=user">Λογαριασμός</a></li>
           <li><a href="./index.php?page=user&action=logout">Αποσύνδεση</a></li>
         <?php } else { ?>
           <li><a href="./index.php?page=user&action=login">Σύνδεση</a></li>
@@ -49,11 +49,14 @@
       <br><br><br/>
       <h1 style="opacity: 0.6">Ψάξε ανάμεσα σε 750 εστιατόρια!</h1>
       <br>
-      <center>
-        <input type="search" placeholder="π.χ Το χάνι του Σταύρου" style="width: 600px">
-      </center>
-      <a href="#" class="button large">Αναζήτηση</a>
-      <a href="#" class="button large hollow">Αισθάνομαι τυχερός</a>
+      <form action="./index.php" method="GET">
+        <input type="hidden" name="page" value="search"/>
+        <center>
+          <input type="search" name="q" autocomplete="off" placeholder="π.χ Το χάνι του Σταύρου" style="width: 600px">
+        </center>
+        <input type="submit" class="button large" name="search_submit" value="Αναζήτηση"/>
+        <input type="submit" class="button large hollow" name="lucky_search_submit" value="Αισθάνομαι τυχερός"/>
+      </form>
       <br><br><br/>
     </div>
   </div>

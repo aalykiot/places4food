@@ -9,7 +9,8 @@
       'home' => array('path' => 'home', 'view' => 'HomeView', 'model' => 'HomeModel', 'controller' => 'HomeController'),
       'user' => array('path' => 'user', 'view' => 'UserView', 'model' => 'UserModel', 'controller' => 'UserController'),
       'restaurant' => array('path' => 'restaurant', 'view' => 'RestaurantView', 'model' => 'RestaurantModel', 'controller' => 'RestaurantController'),
-      'reviews' => array('path' => 'review', 'view' => 'ReviewView', 'model' => 'ReviewModel', 'controller' => 'ReviewController')
+      'reviews' => array('path' => 'review', 'view' => 'ReviewView', 'model' => 'ReviewModel', 'controller' => 'ReviewController'),
+      'search' => array('path' => 'search', 'view' => 'SearchView', 'model' => 'SearchModel', 'controller' => 'SearchController')
 
     );
 
