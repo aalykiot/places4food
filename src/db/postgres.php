@@ -48,7 +48,7 @@
 
         $stmt->execute($params);
 
-        return $this->conn->lastInsertId();
+        return $this->conn->errorCode();
 
       } catch(PDOException $e) {
         die($e->getMessage());

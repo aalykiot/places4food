@@ -4,11 +4,26 @@
 
   class UserModel {
 
-    public $template;
-
     private $conn;
 
+    public $template;
+    public $user;
+
     public function __construct() {
+
+      if (isset($_SESSION['u_id'])) {
+
+        $this->conn = new PGConnection();
+
+        $self_id = $_SESSION['u_id'];
+
+        $sql = "SELECT * FROM users WHERE id = '$self_id';";
+
+        $this->user = $this->conn->query($sql)[0];
+
+        $this->conn = null;
+
+      }
 
     }
 
@@ -20,13 +35,16 @@
 
       $this->conn = new PGConnection();
 
-      $sql = "SELECT password AS hash FROM users WHERE email='$email';";
+      $sql = "SELECT id, password AS hash FROM users WHERE email='$email';";
 
       $result = $this->conn->query($sql);
 
       $this->conn = null;
 
-      return password_verify($password, $result[0]['hash']);
+      return array(
+        'auth' => password_verify($password, $result[0]['hash']),
+        'id' => $result[0]['id']
+      );
 
     }
 
@@ -44,17 +62,73 @@
 
     }
 
+    public function check_availability_for_update($email, $username) {
+
+      $this->conn = new PGConnection();
+
+      $self_id = $_SESSION['u_id'];
+
+      $sql = "SELECT COUNT(*) as count FROM users WHERE (email='$email' OR username='$username') AND id != $self_id;";
+
+      $result = $this->conn->query($sql);
+
+      $this->conn = null;
+
+      return $result[0]['count'] == 0 ? true : false;
+
+    }
+
     public function register_user($username, $email, $password) {
 
       $this->conn = new PGConnection();
 
       $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?);";
 
-      $u_id = $this->conn->execute($sql, [$username, $email, $password]);
+      $this->conn->execute($sql, [$username, $email, $password])[0];
+
+      $sql = "SELECT id FROM users WHERE email='$email';";
+
+      $u_id = $this->conn->query($sql)[0]['id'];
 
       $this->conn = null;
 
       return $u_id;
+
+    }
+
+    public function update_info($username, $email, $password) {
+
+      $this->conn = new PGConnection();
+
+      $sql = "UPDATE users SET username = ?, email = ?, password = ? WHERE id = ?;";
+
+      $error = $this->conn->execute($sql, [$username, $email, $password, $_SESSION['u_id']]);
+
+      $this->conn = null;
+
+      return $error;
+
+    }
+
+    public function update_photo($base64) {
+
+      $this->conn = new PGConnection();
+
+      $sql = "UPDATE users SET photo = ? WHERE id = ?;";
+
+      $error = $this->conn->execute($sql, [$base64, $_SESSION['u_id']]);
+
+      $this->conn = null;
+
+      return $error;
+
+    }
+
+    public function is_logged_in() {
+
+      if (isset($_SESSION['u_id'])) return true;
+
+      return false;
 
     }
 
