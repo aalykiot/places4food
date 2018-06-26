@@ -76,11 +76,11 @@
 
                 $u_id = $this->model->register_user($username, $email, $hashed_password);
 
-                if (isset($u_id)) {
+                if (!empty($u_id)) {
 
                   $_SESSION['u_id'] = $u_id;
 
-                  header('Location: ./index.php?page=home');
+                  header('Location: ./index.php?page=user');
 
                 } else {
                   $this->error = 'Κάτι πήγε στραβά. Προσπαθήστε αργότερα!';
