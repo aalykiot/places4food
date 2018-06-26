@@ -194,7 +194,7 @@
           Σχόλια
           <textarea placeholder="Γράψε τα σχόλια σου εδώ..." name="description" style="height: 200px;"></textarea>
           </label>
-          <input type="submit" name="create_review" value="Υποβολή κράτησης" class="button"/>
+          <input type="submit" name="create_review" value="Υποβολή κριτικής" class="button"/>
         </form>
         </div>
 
