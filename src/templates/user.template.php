@@ -51,7 +51,7 @@
         <?php if ($error) { ?>
 
           <div class="row">
-            <div style="padding: 10px;background: #c0392b; color: #fff;">
+            <div style="padding: 10px;margin-right: 20px;background: #c0392b; color: #fff;">
               <b style="margin-left: 25px;"><?php echo $error ?></b>
             </div>
           <div/>
@@ -63,7 +63,7 @@
         <?php if ($success) { ?>
 
           <div class="row">
-            <div style="padding: 10px;background: #2ecc71; color: #fff;">
+            <div style="padding: 10px;margin-right: 20px;background: #2ecc71; color: #fff;">
               <b style="margin-left: 25px;"><?php echo $success ?></b>
             </div>
           <div/>
@@ -72,7 +72,9 @@
         <?php } ?>
 
         <div class="row">
+          <hr>
           <h5 style="margin-left: 50px;">Ανανέωση πληροφοριών</h5><hr>
+          <br>
           <div style="width: 600px;margin-left: 50px;">
             <form action="./index.php?page=user" method="POST">
               <label>Ψευδώνυμο
@@ -88,9 +90,12 @@
             </form>
           </div>
         </div>
-        <hr>
+        <br>
+        <br>
         <div class="row">
+          <hr>
           <h5 style="margin-left: 50px;">Αλλαγή εικόνας προφίλ</h5><hr>
+          <br>
           <div style="width: 600px;margin-left: 50px;">
             <form action="./index.php?page=user" method="POST" enctype="multipart/form-data">
               <label>Φωτογραφία προφίλ
@@ -100,9 +105,12 @@
             </form>
           </div>
         </div>
-        <hr>
+        <br>
+        <br>
         <div class="row">
+          <hr>
           <h5 style="margin-left: 50px;">Δημιουργία Εστιατορίου</h5><hr>
+          <br>
           <div style="width: 600px;margin-left: 50px;">
             <form action="./index.php?page=user" method="POST">
               <label>Όνομα
