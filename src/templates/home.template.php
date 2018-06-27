@@ -47,7 +47,7 @@
   <div class="callout large">
     <div class="row column text-center">
       <br><br><br/>
-      <h1 style="opacity: 0.6">Ψάξε ανάμεσα σε 750 εστιατόρια!</h1>
+      <h1 style="opacity: 0.6">Ψάξε ανάμεσα σε 200 εστιατόρια!</h1>
       <br>
       <form action="./index.php" method="GET">
         <input type="hidden" name="page" value="search"/>

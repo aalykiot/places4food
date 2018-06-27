@@ -129,7 +129,7 @@
                   <option value="Μοντέρνα κουζίνα">Μοντέρνα κουζίνα</option>
                   <option value="American style">American style</option>
                   <option value="Ζαχαροπλαστεία & Φούρνοι">Ζαχαροπλαστεία & Φούρνοι</option>
-                  <option value="Ιαπωνία- Sushi ">Ιαπωνία- Sushi </option>
+                  <option value="Ιαπωνία- Sushi">Ιαπωνία- Sushi </option>
                 </select>
               </label>
               <label>Τοποθεσία

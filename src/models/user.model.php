@@ -101,7 +101,7 @@
 
       $sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?);";
 
-      $this->conn->execute($sql, [$username, $email, $password]);
+      $error = $this->conn->execute($sql, [$username, $email, $password]);
 
       $sql = "SELECT id FROM users WHERE email='$email';";
 
