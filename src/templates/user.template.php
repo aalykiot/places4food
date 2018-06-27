@@ -112,12 +112,12 @@
           <h5 style="margin-left: 50px;">Δημιουργία Εστιατορίου</h5><hr>
           <br>
           <div style="width: 600px;margin-left: 50px;">
-            <form action="./index.php?page=user" method="POST">
+            <form action="./index.php?page=user" method="POST" enctype="multipart/form-data">
               <label>Όνομα
                 <input type="text" autocomplete="off" name="name">
               </label>
               <label>Κατηγορία
-                <select>
+                <select name="type">
                   <option value="Σουβλάκι & Σχάρα">Σουβλάκι & Σχάρα</option>
                   <option value="Ταβέρνες & Ψητοπωλεία">Ταβέρνες & Ψητοπωλεία</option>
                   <option value="Μεζεδοπωλεία">Μεζεδοπωλεία</option>
@@ -134,6 +134,9 @@
               </label>
               <label>Τοποθεσία
                 <input type="text" autocomplete="off" name="location">
+              </label>
+              <label>Λίνκ εστιατορίου (όχι απαραίτητο)
+                <input type="text" autocomplete="off" placeholder="π.χ. www.my-sites-restaurant.com" name="aite_link">
               </label>
               <label>Λίγα Λόγια
                 <textarea style="height: 200px;" autocomplete="off" name="description"></textarea>

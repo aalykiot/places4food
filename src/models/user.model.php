@@ -78,6 +78,23 @@
 
     }
 
+
+    public function delete_restaurant($r_id, $self_id) {
+
+      $this->conn = new PGConnection();
+
+      $sql = "DELETE FROM reviews WHERE restaurant_id = ?;";
+
+      $this->conn->execute($sql, [$self_id]);
+
+      $sql = "DELETE FROM restaurants WHERE id = ? AND created_by = ?;";
+
+      $result = $this->conn->execute($sql, [$r_id, $self_id]);
+
+      return $result;
+
+    }
+
     public function register_user($username, $email, $password) {
 
       $this->conn = new PGConnection();
@@ -93,6 +110,31 @@
       $this->conn = null;
 
       return $u_id;
+
+    }
+
+    public function add_restaurant($name, $type, $location, $description, $photo, $link) {
+
+      $this->conn = new PGConnection();
+
+      $sql = "SELECT NOW()";
+
+      $now_timestamp = $this->conn->query($sql)[0]['now'];
+
+      $sql = "
+        INSERT INTO restaurants (name, type, location, description, photo, created_by, created_at, site_link)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?);
+      ";
+
+      $self_id = $_SESSION['u_id'];
+
+      $error = $this->conn->execute($sql, [$name, $type, $location, $description, $photo, $self_id, $now_timestamp, $link]);
+
+      $sql = "SELECT id FROM restaurants WHERE created_by = '$self_id' AND created_at = '$now_timestamp';";
+
+      $r_id = $this->conn->query($sql)[0]['id'];
+
+      return $r_id;
 
     }
 

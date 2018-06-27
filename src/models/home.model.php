@@ -1,6 +1,6 @@
 <?php
 
-  if(!isset($_SESSION)) 
+  if(!isset($_SESSION))
   {
       session_start();
   }
@@ -66,7 +66,7 @@
         FROM reviews
         JOIN users ON users.id = user_id
         JOIN restaurants ON restaurants.id = restaurant_id
-        ORDER BY created_at DESC
+        ORDER BY reviews.created_at DESC
         LIMIT 9;
       ";
 

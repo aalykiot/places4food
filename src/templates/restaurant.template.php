@@ -84,7 +84,16 @@
         </div>
       </div>
       <br><br>
-      <a href="#" class="button large expanded">Κάντε κράτηση</a>
+      <a href="http://<?php echo $restaurant_info['site_link'] ?>" target="_blank" class="button large expanded">Επίσκεψη Ιστοσελίδας</a>
+
+      <?php if ($restaurant_info['created_by'] == $_SESSION['u_id']) { ?>
+        <form action="./index.php?page=user" method="POST">
+          <input type="hidden" name="r_id" value="<?php echo $restaurant_info['id'] ?>"/>
+          <input type="submit" class="button large expanded hollow" name="delete_restaurant" value="Διαγραφή Εστιατορίου" />
+        </form>
+
+      <?php } ?>
+
     </div>
   </div>
   <div class="column row">
@@ -138,7 +147,7 @@
 
       <div class="tabs-panel" id="panel2">
 
-        <?php if ($is_logged_in) { ?>
+        <?php if ($is_logged_in && $restaurant_info['created_by'] != $_SESSION['u_id']) { ?>
 
           <div style="width: 700px;">
 
@@ -201,9 +210,21 @@
 
 
         <?php } else { ?>
-          <center>
-            <h5>Κάντε <a href="./index.php?page=user&action=login">σύνδεση</a> ή <a href="/index.php?page=user&action=register">εγγραφή</a></h5>
-          </center>
+
+          <?php if ($is_logged_in) { ?>
+
+            <center>
+              <h5>Επειδή είστε ο ιδιοκτήτης του εστιατορίου δεν επιτρέπεται να καταχωρήσετε κάποια κριτική!</h5>
+            </center>
+
+          <?php } else { ?>
+
+            <center>
+              <h5>Κάντε <a href="./index.php?page=user&action=login">σύνδεση</a> ή <a href="/index.php?page=user&action=register">εγγραφή</a></h5>
+            </center>
+
+          <?php } ?>
+
         <?php } ?>
 
         <div class="row medium-up-3 large-up-5">

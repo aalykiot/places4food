@@ -15,7 +15,11 @@ CREATE TABLE restaurants(
   photo TEXT,
   location VARCHAR(40),
   sponsored BOOLEAN DEFAULT(false),
-  PRIMARY KEY (id)
+  site_link TEXT,
+  created_by INTEGER NOT NULL,
+  created_at TIMESTAMP NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (created_by) REFERENCES users (id)
 );
 
 CREATE TABLE reviews(

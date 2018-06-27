@@ -153,6 +153,24 @@
 
       }
 
+      if (isset($_POST['delete_restaurant'])) {
+
+        $r_id = $_POST['r_id'];
+
+        $error = $this->model->delete_restaurant($r_id, $_SESSION['u_id']);
+
+        if ($error != 00000) {
+
+          $this->error = "Η διαγραφή του εστιατορίου δεν ήταν επιτυχής!";
+
+        } else {
+
+          $this->success = "Το εστιατόριο διαφράφτηκε με επιτυχία!";
+
+        }
+
+      }
+
       if (isset($_POST['profile_photo_submit'])) {
 
         $allowed_ext= array('jpg','jpeg','png');
@@ -203,7 +221,53 @@
 
       if (isset($_POST['restaurant_creation_submit'])) {
 
+        $name = $_POST['name'];
+        $type = $_POST['type'];
+        $location = $_POST['location'];
+        $description = $_POST['description'];
+        $link = $_POST['site_link'];
 
+        $allowed_ext= array('jpg','jpeg','png');
+
+        $file_name = $_FILES['photo_file']['name'];
+        $file_tmp = $_FILES['photo_file']['tmp_name'];
+
+        $file_ext = strtolower(end(explode('.', $file_name)));
+
+        if (!empty($name) && !empty($type) && !empty($location) && !empty($description) && !empty($file_name)) {
+
+            if(in_array($file_ext, $allowed_ext) === false) {
+
+              $this->error = "Το αρχείο φωτογραφίας δεν είναι συμβατό!";
+
+            } else {
+
+              if (!empty($file_tmp)) {
+
+                $data = file_get_contents($file_tmp);
+                $base64 = base64_encode($data);
+
+                $r_id = $this->model->add_restaurant($name, $type, $location, $description, $base64, $site_link);
+
+                if (!empty($r_id)) {
+
+                  $this->success = "Η δημιουργια εστιατορίου ήταν επιτυχής! Mπορείς να το δείς <a href='./index.php?page=restaurant&id=$r_id'>εδω</a>";
+
+                } else {
+                  $this->error = "Η δημιουργία εστιατορίου δεν ήταν επιτυχής!";
+                }
+
+              } else {
+
+                $this->error = "Το μέγεθος αρχείο φωτογραφίας υπερβαίνει το επιτρεπτό όριο!";
+
+              }
+
+            }
+
+        } else {
+          $this->error = "Κάποια πεδία δεν είναι συμπληρομένα!";
+        }
 
       }
 
