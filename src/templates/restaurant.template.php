@@ -110,10 +110,8 @@
             <div class="media-object stack-for-small" id="review-<?php echo $review['r_id'] ?>" style="width: 700px;">
               <div class="media-object-section">
                 <center>
-                  <a href="./index.php?page=user&id=<?php echo $review['user_id'] ?>">
-                    <img class="thumbnail" width="130" height="130" src="data:image/jpeg;base64,<?php echo $review['photo'] ?>"/>
-                    <h6> <?php echo $review['username'] ?> </h6>
-                  </a>
+                  <img class="thumbnail" width="130" height="130" src="data:image/jpeg;base64,<?php echo $review['photo'] ?>"/>
+                  <h6> <?php echo $review['username'] ?> </h6>
                 </center>
               </div>
               <div class="media-object-section" style="position: relative; left: 30px;">

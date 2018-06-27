@@ -137,9 +137,7 @@
 
           <div class="media-object">
             <div class="media-object-section">
-              <a href="./index.php?page=user&id=<?php echo $latest_reviews[$i]['u_id'] ?>">
                 <img class="thumbnail" width="120" height="120" src="data:image/jpeg;base64,<?php echo $latest_reviews[$i]['u_photo'] ?>">
-              </a>
             </div>
             <div class="media-object-section">
               <h6>Για το <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'] ?>"><b><?php echo $latest_reviews[$i]['r_name'] ?></b></a></h6>
@@ -157,9 +155,7 @@
 
           <div class="media-object">
             <div class="media-object-section">
-              <a href="./index.php?page=user&id=<?php echo $latest_reviews[$i]['u_id'] ?>">
-                <img class="thumbnail" width="120" height="120" src="data:image/jpeg;base64,<?php echo $latest_reviews[$i]['u_photo'] ?>">
-              </a>
+              <img class="thumbnail" width="120" height="120" src="data:image/jpeg;base64,<?php echo $latest_reviews[$i]['u_photo'] ?>">
             </div>
             <div class="media-object-section">
               <h6>Για το <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'] ?>"><b><?php echo $latest_reviews[$i]['r_name'] ?></b></a></h6>
@@ -177,9 +173,7 @@
 
           <div class="media-object">
             <div class="media-object-section">
-              <a href="./index.php?page=user&id=<?php echo $latest_reviews[$i]['u_id'] ?>">
-                <img class="thumbnail" width="120" height="120" src="data:image/jpeg;base64,<?php echo $latest_reviews[$i]['u_photo'] ?>">
-              </a>
+              <img class="thumbnail" width="120" height="120" src="data:image/jpeg;base64,<?php echo $latest_reviews[$i]['u_photo'] ?>">
             </div>
             <div class="media-object-section">
               <h6>Για το <a href="./index.php?page=restaurant&id=<?php echo $latest_reviews[$i]['r_id'] ?>"><b><?php echo $latest_reviews[$i]['r_name'] ?></b></a></h6>
