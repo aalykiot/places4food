@@ -110,7 +110,17 @@
             <div class="media-object stack-for-small" id="review-<?php echo $review['r_id'] ?>" style="width: 700px;">
               <div class="media-object-section">
                 <center>
-                  <img class="thumbnail" width="130" height="130" src="data:image/jpeg;base64,<?php echo $review['photo'] ?>"/>
+
+                  <?php if (empty($review['photo'])) { ?>
+
+                    <img class="thumbnail" width="130" height="130" src="./assets/images/user_profile.png">
+
+                  <?php } else { ?>
+
+                    <img class="thumbnail" width="130" height="130" src="data:image/jpeg;base64,<?php echo $review['photo'] ?>"/>
+
+                  <?php } ?>
+
                   <h6> <?php echo $review['username'] ?> </h6>
                 </center>
               </div>

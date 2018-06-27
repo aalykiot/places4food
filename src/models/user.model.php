@@ -85,7 +85,7 @@
 
       $sql = "DELETE FROM reviews WHERE restaurant_id = ?;";
 
-      $this->conn->execute($sql, [$self_id]);
+      $this->conn->execute($sql, [$r_id]);
 
       $sql = "DELETE FROM restaurants WHERE id = ? AND created_by = ?;";
 
