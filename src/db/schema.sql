@@ -10,10 +10,10 @@ CREATE TABLE users(
 CREATE TABLE restaurants(
   id SERIAL NOT NULL,
   name VARCHAR(50) NOT NULL,
-  description TEXT,
+  description TEXT NOT NULL,
   type VARCHAR(50),
-  photo TEXT,
-  location VARCHAR(40),
+  photo TEXT NOT NULL,
+  location VARCHAR(40) NOT NULL,
   sponsored BOOLEAN DEFAULT(false),
   site_link TEXT,
   created_by INTEGER NOT NULL,
